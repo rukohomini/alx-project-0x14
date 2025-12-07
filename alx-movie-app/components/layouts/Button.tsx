@@ -1,10 +1,11 @@
 import React from "react";
-interface LayoutButtonProps {
+
+interface ButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
 }
 
-const LayoutButton: React.FC<LayoutButtonProps> = ({ children, onClick }) => {
+const Button: React.FC<ButtonProps> = ({ children, onClick }) => {
   return (
     <button
       onClick={onClick}
@@ -15,4 +16,4 @@ const LayoutButton: React.FC<LayoutButtonProps> = ({ children, onClick }) => {
   );
 };
 
-export default LayoutButton;
+export default Button;
