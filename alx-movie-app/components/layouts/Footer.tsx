@@ -1,8 +1,12 @@
-import Header from "./Header";
-import Footer from "../layouts/Footer";
+import React from "react";
 
-
-const Footer = () => <div>Footer Component</div>;
+const Footer: React.FC = () => {
+  return (
+    <footer className="p-4 bg-gray-800 text-white text-center">
+      Footer Component
+    </footer>
+  );
+};
 
 export default Footer;
 
