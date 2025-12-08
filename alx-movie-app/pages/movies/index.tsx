@@ -4,11 +4,7 @@ import MovieCard from "@/components/commons/MovieCard";
 import { MoviesProps } from "@/interfaces";
 import { useCallback, useEffect, useState } from "react";
 
-interface MProps {
-  movies: MoviesProps[]
-}
-
-const Movies: React.FC<MProps> = () => {
+const Movies: React.FC = () => {
   const [page, setPage] = useState<number>(1)
   const [year, setYear] = useState<number | null>(null)
   const [genre, setGenre] = useState<string>("All")
@@ -22,10 +18,7 @@ const Movies: React.FC<MProps> = () => {
       body: JSON.stringify({ page, year, genre: genre === "All" ? "" : genre }),
       headers: { 'Content-Type': 'application/json; charset=utf-8' }
     })
-    if (!response.ok) {
-      setLoading(false)
-      throw new Error("Something went wrong")
-    }
+    if (!response.ok) { setLoading(false); throw new Error("Something went wrong") }
     const data = await response.json()
     setMovies(data.movies)
     setLoading(false)
